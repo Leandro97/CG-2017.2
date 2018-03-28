@@ -26,15 +26,15 @@ void MainWindow::on_radioButton_2_clicked() {
 }
 
 void MainWindow::on_rBox_valueChanged(double arg1) {
-    setColors(arg1, getG(), getB());
+    setR(arg1);
 }
 
 void MainWindow::on_gBox_valueChanged(double arg1) {
-    setColors(getR(), arg1, getB());
+    setG(arg1);
 }
 
 void MainWindow::on_bBox_valueChanged(double arg1) {
-    setColors(getR(), getG(), arg1);
+    setB(arg1);
 }
 
 void MainWindow::on_espessura_valueChanged(int value) {

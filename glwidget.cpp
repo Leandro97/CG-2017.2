@@ -27,23 +27,16 @@ void setTam(int value) {
     tam = value;
 }
 
-float setColors(float r, float g, float b) {
-    color[0] = r;
-    color[1] = g;
-    color[2] = b;
-    return 1;
+void setR(float value) {
+    color[0] = value;
 }
 
-float getR() {
-    return color[0];
+void setG(float value) {
+    color[1] = value;
 }
 
-float getG() {
-    return color[1];
-}
-
-float getB() {
-    return color[2];
+void setB(float value) {
+    color[2] = value;
 }
 
 void drawField(void (*reta)(int,int,int,int), void (*circ)(int,int,int), void (*semiCirc)(int,int,int,int)) {
@@ -75,7 +68,7 @@ void drawField(void (*reta)(int,int,int,int), void (*circ)(int,int,int), void (*
         reta(440,90,480,90);
         circ(410, 180, 30);
 
-        for(int i =0; i < lines.size(); i++) {
+        for(int i = 0; i < lines.size(); i++) {
             reta(std::get<0>(lines[i]), std::get<1>(lines[i]), std::get<2>(lines[i]), std::get<3>(lines[i]));
         }
         glFlush();

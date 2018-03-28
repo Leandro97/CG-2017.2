@@ -21,9 +21,8 @@ private:
     void drawField(void (*reta)(int,int,int,int));
     void setBres(int value);
     void setTam(int value);
-    float setColors(float r, float g, float b);
-    float getR();
-    float getG();
-    float getB() ;
+    void setR(float value);
+    void setG(float value);
+    void setB(float value) ;
 
 #endif // GLWIDGET_H
