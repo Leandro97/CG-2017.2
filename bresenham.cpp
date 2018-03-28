@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/* 
+Link do código usado em drawPixel, bresenhamX, bresenhamY e bresenhamReta:
+https://stackoverflow.com/questions/35015683/opengl-bresenham-line/35015906#35015906
+*/
 void drawPixel(int x, int y) {
     glBegin(GL_POINTS);
         glVertex2f(x,y);
@@ -75,7 +79,10 @@ void bresenhamReta(int x0, int y0, int x1, int y1) {
         bresenhamY(x0, y0, x1, y1, dx, dy);
 }
 
-
+/*
+Link para código usado em plotPointCirc, bresenhamCirculo e bresenhamSemiCirculo:
+https://gist.github.com/AjayKrP/0fc9371f4616ddd5b0ba65f9c01c3ea3
+*/
 void plotPointCirc(int xc, int yc, int x, int y) {
   glBegin(GL_POINTS);
   glVertex2i(xc+x, yc+y);//1 quadrante
