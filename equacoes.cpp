@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/*
+Código utilizado para as funções da reta:
+https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm#Line_equation
+*/
+
 void eqReta(int x0, int y0, int x1, int y1) {
     int dx = abs(x1 - x0);
     int dy = abs(y1 - y0);
