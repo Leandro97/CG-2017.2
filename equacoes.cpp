@@ -4,6 +4,7 @@
 #include <GL/glut.h>
 
 using namespace std;
+const float DEG2RAD = 3.14159/180;
 
 /*
 Código utilizado para as funções da reta:
@@ -47,41 +48,41 @@ void retaY(int x0, int y0, int x1, int y1) {
     }
 }
 
-
+/*
+Código utilizado para as funções da circunferência:
+https://www.opengl.org/discussion_boards/showthread.php/167955-drawing-a-smooth-circle
+*/
 
 void circulo(int xc, int yc, int r) {
-    int x, y;
-    glBegin(GL_POINTS);
-    for(x = xc-r; x<=r+xc; x++) {
-        y = yc + sqrt(r*r-(x-xc)*(x-xc));
-        glVertex2i(x, y);
-    }
-    for(x = xc-r; x<=r+xc; x++) {
-        y = yc - sqrt(r*r-(x-xc)*(x-xc));
-        glVertex2i(x, y);
-    }
-    glEnd();
-    glFlush();
+   glBegin(GL_POINTS);
+
+   for (int i=0; i < 360; i++) {
+      float degInRad = i*DEG2RAD;
+      glVertex2f(xc + cos(degInRad)*r, yc + sin(degInRad)*r);
+   }
+
+   glEnd();
 }
 
 void semiCirculo(int xc, int yc, int r, int dir) {
-    int x, y;
-    glBegin(GL_POINTS);
-    if(dir==1){
-        for(x = xc; x<=r+xc; x++) {
-            y = yc + sqrt(r*r-(x-xc)*(x-xc));
-            glVertex2i(x, y);
-            y = yc - sqrt(r*r-(x-xc)*(x-xc));
-            glVertex2i(x, y);
-        }
-    } else {
-        for(x = xc; x>=xc-r; x--) {
-            y = yc + sqrt(r*r-(x-xc)*(x-xc));
-            glVertex2i(x, y);
-            y = yc - sqrt(r*r-(x-xc)*(x-xc));
-            glVertex2i(x, y);
-        }
-    }
-    glEnd();
-    glFlush();
+   glBegin(GL_POINTS);
+
+   if(dir == 1) {
+       for (int i = 0; i < 90; i++) {
+          float degInRad = i*DEG2RAD;
+          glVertex2f(xc + cos(degInRad)*r, yc + sin(degInRad)*r);
+       }
+
+       for (int i = 270; i < 360; i++) {
+          float degInRad = i*DEG2RAD;
+          glVertex2f(xc + cos(degInRad)*r, yc + sin(degInRad)*r);
+       }
+   } else {
+       for (int i = 90; i < 270; i++) {
+          float degInRad = i*DEG2RAD;
+          glVertex2f(xc + cos(degInRad)*r, yc + sin(degInRad)*r);
+       }
+   }
+
+   glEnd();
 }

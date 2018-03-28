@@ -60,11 +60,11 @@ void drawField(void (*reta)(int,int,int,int), void (*circ)(int,int,int), void (*
         reta(60,150,130,150);
         reta(130,210,130,150);
         reta(60,90,110,90);
-        circ(130, 180, 20);
+        circ(130, 180, 30);
 
         //Middle line
         reta(270,80,270,280);
-        circ(270, 180, 20);
+        circ(270, 180, 30);
 
         //Right Area
         semiCirc(440, 180, 90, -1);
@@ -73,12 +73,7 @@ void drawField(void (*reta)(int,int,int,int), void (*circ)(int,int,int), void (*
         reta(410,150,480,150);
         reta(410,210,410,150);
         reta(440,90,480,90);
-        circ(410, 180, 20);
-
-    //    //circ(220,100,18);
-    //    bresenham(220,75,220,125);
-    //    bresenham(160,75,220,75);
-    //    bresenham(160,125,220,125);
+        circ(410, 180, 30);
 
         for(int i =0; i < lines.size(); i++) {
             reta(std::get<0>(lines[i]), std::get<1>(lines[i]), std::get<2>(lines[i]), std::get<3>(lines[i]));
