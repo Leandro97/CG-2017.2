@@ -21,7 +21,7 @@ void bresenhamX(int x0, int y0, int x1, int y1, int dx, int dy) {
     i = 2 * dy - dx;
     j = 2 * dy;
     k = 2 * (dy - dx);
-    if (!(x0 < x1)) {
+    if (x0 >= x1) {
         swap(x0, x1);
         swap(y0, y1);
     }
@@ -49,7 +49,7 @@ void bresenhamY(int x0, int y0, int x1, int y1, int dx, int dy) {
     i = 2 * dx - dy;
     j = 2 * dx;
     k = 2 * (dx - dy);
-    if (!(y0 < y1)) {
+    if (y0 >= y1) {
         swap(x0, x1);
         swap(y0, y1);
     }
